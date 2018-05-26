@@ -10,7 +10,9 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 TODO
 
 ## Tech Stack
-* Intellij IDEA 2018.1
+* IDE: Sublime Text 2016 / IntelliJ IDEA 2018.1
+* Build system: Gradle 4.7
+* Back-end: Java 1.8.0, Spring Boot 2.0.1
 * Docker version 18.03.1-ce
 
 To take a look in other projects, please see https://github.com/topera/index
