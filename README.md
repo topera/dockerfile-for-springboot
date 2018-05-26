@@ -7,9 +7,13 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * In IntelliJ IDEA: File → New → Project From Version Control -> Git -> put the url of this repository
 
 ## How to test
-* TODO
-* $ gradle
-* Access http://localhost:8080/test
+* Generated the jar with the application:
+    * `$ gradle bootJar`
+* Create a new Docker Image using the Dockerfile, to encapsulate the jar:
+    * `$ docker build -t hello:1.0 .`
+* Run the new Docker Image:
+    * `$ docker run -p 8080:8080 --name hello hello:1.0 -d`
+* Wait some seconds and access http://localhost:8080/test
 
 ## Tech Stack
 * IDE: Sublime Text 2016 / IntelliJ IDEA 2018.1
