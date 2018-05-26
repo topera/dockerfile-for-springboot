@@ -15,8 +15,8 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
     * `$ docker run -p 8080:8080 --name hello hello:1.0 -d`
 * Wait some seconds and access http://localhost:8080/test
 
-## How to deploy in another environment
-* First, let's push our image to DockerHub. My repository is called "topera", so I'll use this command:
+## How to share your docker image
+* Let's push our image to DockerHub. My repository is called "topera", so I'll use this command:
     * `$ docker push topera/hello:1.0`
 
 ## Tech Stack
