@@ -1,0 +1,66 @@
+/*
+
+This file is optional in this hello world!
+
+*/
+task stopContainer(type: Exec) {
+    group = 'docker'
+    doFirst {
+        executable "sh"
+        args "-c", "docker stop hello || true"
+    }
+}
+
+task deleteContainer(type: Exec) {
+    group = 'docker'
+    doFirst {
+        executable "sh"
+        args "-c", "docker rm hello || true"
+    }
+}
+
+task deleteImage(type: Exec) {
+    group = 'docker'
+    doFirst {
+        executable "sh"
+        args "-c", "docker rmi hello:1.0 || true"
+    }
+}
+
+task createImage(type: Exec) {
+    group = 'docker'
+    doFirst {
+        executable "sh"
+        args "-c", "docker build -t hello:1.0 ."
+    }
+}
+
+task runImage(type: Exec) {
+    group = 'docker'
+    doFirst {
+        executable "sh"
+        args "-c", "docker run -p 8080:8080 --name hello hello:1.0"
+    }
+}
+
+runImage {
+    dependsOn createImage
+}
+
+createImage {
+    dependsOn deleteImage
+}
+
+deleteImage {
+    dependsOn deleteContainer
+}
+
+deleteContainer {
+    dependsOn stopContainer
+}
+
+stopContainer {
+    dependsOn bootJar
+}
+
+

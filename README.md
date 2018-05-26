@@ -1,5 +1,5 @@
 # Topera's Hello World #018
-## Dockerfile used to deliver SpringBoot application
+## Dockerfile used to deliver SpringBoot application, with Gradle
 This hello world shows how to use Docker to deploy the jar of a SpringBoot application
 
 ## How to download this source code

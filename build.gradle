@@ -12,3 +12,6 @@ dependencies {
     // spring to create the rest server
     compile "org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE"
 }
+
+apply from: 'optional.gradle'
+
