@@ -16,7 +16,8 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * Wait some seconds and access http://localhost:8080/test
 
 ## How to deploy in another environment
-* TODO
+* First, let's push our image to DockerHub. My repository is called "topera", so I'll use this command:
+    * `$ docker push topera/hello:1.0`
 
 ## Tech Stack
 * IDE: Sublime Text 2016 / IntelliJ IDEA 2018.1
