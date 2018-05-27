@@ -1,78 +1,47 @@
 /*
-
-This file is optional in this hello world!
-
+This file is OPTIONAL in this hello world!
 */
-task stopContainer(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
+task stopContainer(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
         args "-c", "docker stop hello || true"
     }
 }
 
-task deleteContainer(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
-        args "-c", "docker rm hello || true"
+task deleteContainer(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
+        args "-c", 'docker rm hello || true'
     }
 }
 
-task deleteImage(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
-        args "-c", "docker rmi topera/hello:1.0 || true"
+task deleteImage(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
+        args "-c", 'docker rmi topera/hello:1.0 || true'
     }
 }
 
-task createImage(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
-        args "-c", "docker build -t topera/hello:1.0 ."
+task createImage(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
+        args "-c", 'docker build -t topera/hello:1.0 .'
     }
 }
 
-task runImage(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
-        args "-c", "docker run -d -p 8080:8080 --name hello topera/hello:1.0"
+task runImage(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
+        args "-c", 'docker run -d -p 8080:8080 --name hello topera/hello:1.0'
     }
 }
 
-task publishImage(type: Exec) {
-    group = 'docker'
-    doFirst {
-        executable "sh"
-        args "-c", "docker push topera/hello:1.0"
+task publishImage(type: Exec, group: 'docker') {
+    doFirst { executable "sh"
+        args "-c", 'docker push topera/hello:1.0'
     }
 }
 
-publishImage {
-    dependsOn createImage
-}
-
-runImage {
-    dependsOn createImage
-}
-
-createImage {
-    dependsOn deleteImage
-}
-
-deleteImage {
-    dependsOn deleteContainer
-}
-
-deleteContainer {
-    dependsOn stopContainer
-}
-
-stopContainer {
-    dependsOn bootJar
-}
+publishImage { dependsOn createImage }
+runImage { dependsOn createImage }
+createImage { dependsOn deleteImage }
+deleteImage { dependsOn deleteContainer }
+deleteContainer { dependsOn stopContainer }
+stopContainer { dependsOn bootJar }
 
 
