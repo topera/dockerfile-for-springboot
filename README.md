@@ -32,16 +32,16 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
     * `docker pull topera/hello:1.0`
 
 ## How to automatize these operations
-* I created a file called `optional.gradle` which has a lot of operations o automatize the steps above. With them we can easily create and Continuous Delivery environment.
+* I created a file called `docker.gradle` which has a lot of operations to automatize the steps above. With them we can easily create a Continuous Delivery environment.
 * To generate a new package in DockerHub, just run:
-    * `$ docker publishImage`
+    * `$ gradle publishImage`
 * To run you app locally
-    * `$ docker runContainer`
+    * `$ gradle runContainer`
 * Other operations
-    * `$ docker createImage`
-    * `$ docker deleteImage`
-    * `$ docker stopContainer`
-    * `$ docker deleteContainer`
+    * `$ gradle createImage`
+    * `$ gradle deleteImage`
+    * `$ gradle stopContainer`
+    * `$ gradle deleteContainer`
 
 ## Folder Structure
 ![folder-structure](./doc/files.png)
