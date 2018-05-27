@@ -23,7 +23,7 @@ task deleteImage(type: Exec) {
     group = 'docker'
     doFirst {
         executable "sh"
-        args "-c", "docker rmi hello:1.0 || true"
+        args "-c", "docker rmi topera/hello:1.0 || true"
     }
 }
 
@@ -31,7 +31,7 @@ task createImage(type: Exec) {
     group = 'docker'
     doFirst {
         executable "sh"
-        args "-c", "docker build -t hello:1.0 ."
+        args "-c", "docker build -t topera/hello:1.0 ."
     }
 }
 
@@ -39,7 +39,7 @@ task runImage(type: Exec) {
     group = 'docker'
     doFirst {
         executable "sh"
-        args "-c", "docker run -p 8080:8080 --name hello hello:1.0"
+        args "-c", "docker run -d -p 8080:8080 --name hello topera/hello:1.0"
     }
 }
 
@@ -47,7 +47,7 @@ task publishImage(type: Exec) {
     group = 'docker'
     doFirst {
         executable "sh"
-        args "-c", "docker tag hello:1.0 topera/hello:1.0; docker push topera/hello:1.0"
+        args "-c", "docker push topera/hello:1.0"
     }
 }
 
