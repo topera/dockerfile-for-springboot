@@ -10,10 +10,10 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * Generated the jar with the application:
     * `$ gradle bootJar`
 * Create a new Docker Image using the Dockerfile, to encapsulate the jar:
-    * `$ docker build -t hello:1.0 .`
-        * The syntax of `-t` is REPOSITORY:VERSION
+    * `$ docker build -t topera/hello:1.0 .`
+        * The syntax of `-t` is USERNAME/REPOSITORY:VERSION
 * Run the new Docker Image:
-    * `$ docker run -d -p 8080:8080 --name hello hello:1.0`
+    * `$ docker run -d -p 8080:8080 --name hello topera/hello:1.0`
 * Wait some seconds and access http://localhost:8080/test
 
 ## How to deploy on AWS
@@ -24,9 +24,7 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * Then, in `AWS` -> `Elastic Beanstalk` -> Follow step to deploy a docker
 
 ## How to share your docker image
-* We can share using DockerHub. My username is called "topera", so I need to tag my image with this username
-    * `$ docker tag hello:1.0 topera/hello:1.0`
-* Now I can push my image to my public repository
+* We can share using DockerHub. Lets push the image to the repository
     * `$ docker push topera/hello:1.0`
 * It's available here:
     * https://hub.docker.com/r/topera/hello/
