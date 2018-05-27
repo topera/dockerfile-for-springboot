@@ -13,7 +13,7 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
     * `$ docker build -t hello:1.0 .`
         * The syntax of `-t` is REPOSITORY:VERSION
 * Run the new Docker Image:
-    * `$ docker run -p 8080:8080 --name hello hello:1.0 -d`
+    * `$ docker run -d -p 8080:8080 --name hello hello:1.0`
 * Wait some seconds and access http://localhost:8080/test
 
 ## How to deploy on AWS
