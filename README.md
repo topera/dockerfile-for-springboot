@@ -4,7 +4,7 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 
 ## How to download this source code
 * Use the `Clone or download` button above the get the url of this repository
-* In IntelliJ IDEA: File → New → Project From Version Control -> Git -> put the url of this repository
+* In IntelliJ IDEA: File → New → Project From Version Control → Git → put the url of this repository
 
 ## How to test locally
 * Generated the jar with the application:
@@ -21,7 +21,7 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
     * `Dockerfile`
     * `build/libs/dockerfile-for-springboot.jar`
         * Please take care that the Dockerfile is the root of the jar, not inside a subfolder
-* Then, in `AWS` -> `Elastic Beanstalk` -> Follow step to deploy a docker
+* Then, in `AWS` → `Elastic Beanstalk` → Follow step to deploy a docker
 
 ## How to share your docker image
 * We can share using DockerHub. Lets push the image to the repository
