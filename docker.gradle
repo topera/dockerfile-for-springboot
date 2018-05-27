@@ -1,6 +1,3 @@
-/*
-This file is OPTIONAL in this hello world!
-*/
 task stopContainer(type: Exec, group: 'docker') {
     doFirst { executable "sh"
         args "-c", "docker stop hello || true"
@@ -25,7 +22,7 @@ task createImage(type: Exec, group: 'docker') {
     }
 }
 
-task runImage(type: Exec, group: 'docker') {
+task runContainer(type: Exec, group: 'docker') {
     doFirst { executable "sh"
         args "-c", 'docker run -d -p 8080:8080 --name hello topera/hello:1.0'
     }
@@ -38,7 +35,7 @@ task publishImage(type: Exec, group: 'docker') {
 }
 
 publishImage { dependsOn createImage }
-runImage { dependsOn createImage }
+runContainer { dependsOn createImage }
 createImage { dependsOn deleteImage }
 deleteImage { dependsOn deleteContainer }
 deleteContainer { dependsOn stopContainer }

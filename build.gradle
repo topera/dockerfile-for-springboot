@@ -13,5 +13,5 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE"
 }
 
-apply from: 'optional.gradle'
+apply from: 'docker.gradle'
 
