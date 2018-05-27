@@ -26,8 +26,11 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * We can share using DockerHub. My repository is called "topera", so I'll use this command:
     * `$ docker push topera/hello:1.0`
 
+## Folder Structure
+![folder-structure](./doc/files.png)
+
 ## Tech Stack
-* IDE: Sublime Text 2016 / IntelliJ IDEA 2018.1
+* IDE: IntelliJ IDEA 2018.1
 * Build system: Gradle 4.7
 * Back-end: Java 1.8.0, Spring Boot 2.0.1
 * Docker version 18.03.1-ce
