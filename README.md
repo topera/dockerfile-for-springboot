@@ -17,12 +17,15 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
 * Wait some seconds and access http://localhost:8080/test
 
 ## How to deploy on AWS
-* There are many ways. One of them is to create a jar file with only 2 files, following this structure:
-    * `Dockerfile`
-    * `build/libs/dockerfile-for-springboot.jar`
-        * Please take care that the Dockerfile is the root of the jar, not inside a subfolder
-* Then, in `AWS` → `Elastic Beanstalk` → Follow step to deploy a docker
-
+* There are many ways:
+    * Using Elastic Beanstalk
+        * Create a jar file with only 2 files, following this structure:
+        * `Dockerfile`
+        * `build/libs/dockerfile-for-springboot.jar`
+            * Please take care that the Dockerfile is the root of the jar, not inside a subfolder
+        * `AWS` → `Elastic Beanstalk` → Follow step to deploy a docker
+    * Using ECS (Elastic Container Service)
+        * Please follow instructions. It's complex :)
 ## How to share your docker image
 * We can share using DockerHub. Lets push the image to the repository
     * `$ docker push topera/hello`
