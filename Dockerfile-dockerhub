@@ -1,0 +1,24 @@
+# starts this image exteding openjdk image (which extends a very fast linux distro called Alpine)
+FROM openjdk:8u121-jdk-alpine
+
+# creates a temp folder to compile springboot jar inside the docker image
+RUN mkdir /tmp/src
+
+# copy all content of this GitHub repo to this temporary folder
+COPY . /tmp/src
+
+# Gradle compilation
+WORKDIR /tmp/src
+RUN ./gradlew bootJar
+RUN mv build/libs/*.jar /home/dockerfile-for-springboot.jar
+
+# Clean trash to reduce image size
+RUN rm -rf /tmp/src
+RUN rm -rf /root/.gradle
+
+# expose inner port 8080 to outside world!
+EXPOSE 8080
+
+# executes spring boot (only in server startup, not during the image build)
+CMD java -jar /home/dockerfile-for-springboot.jar
+

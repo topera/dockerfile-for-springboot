@@ -34,6 +34,8 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
     * https://hub.docker.com/r/topera/hello/
 * Anyone can install it using:
     * `docker pull topera/hello`
+* You can also create an AUTOMATED BUILD project in Docker Hub, which will listen your GitHub and creates new images automatically
+    * In this case, we need to adjust our Dockerfile. Please take a look in Dockerfile-dockerhub.
 
 ## How to automatize these operations
 * I created a file called `docker.gradle` which has a lot of operations to automatize the steps above. With them we can easily create a Continuous Delivery environment.
