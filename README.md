@@ -28,6 +28,7 @@ This hello world shows how to use Docker to deploy the jar of a SpringBoot appli
         * Please follow instructions. It's complex :)
 ## How to share your docker image
 * We can share using DockerHub. Lets push the image to the repository
+    $ `$ docker login -u topera -p MY_SECRET_PASS_HERE`
     * `$ docker push topera/hello`
 * It's available here:
     * https://hub.docker.com/r/topera/hello/
