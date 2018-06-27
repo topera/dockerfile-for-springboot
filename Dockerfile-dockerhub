@@ -1,5 +1,6 @@
 # starts this image exteding openjdk image (which extends a very fast linux distro called Alpine)
-FROM openjdk:8u171-jre-alpine
+# Here we must use jdk because the build is done inside the docker
+FROM openjdk:8u171-jdk-alpine
 
 # creates a temp folder to compile springboot jar inside the docker image
 RUN mkdir /tmp/src
