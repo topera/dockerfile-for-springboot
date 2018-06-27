@@ -1,5 +1,5 @@
 # starts this image exteding openjdk image (which extends a very fast linux distro called Alpine)
-FROM openjdk:8u121-jdk-alpine
+FROM openjdk:8u171-jre-alpine3.7
 
 # copy current jar file to a folder inside the image
 COPY build/libs/dockerfile-for-springboot.jar /home
